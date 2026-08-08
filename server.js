@@ -1,21 +1,12 @@
 const express =require("express");
+const mongoose =require("mongoose");
+const cors =require("cors");
+require("dotenv").config();
 
-const app = express();
- 
+const authRouter =require("../router/authRouter")
 
-const part =3000
+const app =express()
 
-app.get("/",(req,res)=>{
+app.use(cors());
 
-    res.send("asslam o alaikum")
-    
-})
-app.get("/shahbaz",(req,res)=>{
-
-    res.send("w/asslam")
-    
-})
-
-app.listen(part,()=>{
-    console.log(`server chal gaya hai${part}`)
-})
+app.use(express.json())
